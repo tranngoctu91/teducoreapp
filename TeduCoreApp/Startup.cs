@@ -26,6 +26,9 @@ namespace TeduCoreApp
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+
+        ///////The ConfigureServices method làm nhiệm vụ cấu hình các request pineline và middleware
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -45,7 +48,11 @@ namespace TeduCoreApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
+
+
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        //configure register các service trong dependency injection
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
